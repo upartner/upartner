@@ -1,0 +1,35 @@
+<h1>Listing messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Message</th>
+      <th>Image_Url</th>
+      <th>Update time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <!--<td><%= message.message_id %></td>-->
+        <td><%= message.title %></td>
+        <td><%= message.message %></td>
+        <td><%= image_tag(message.image_url, class: 'list_image') %>
+        <td><%= message.create_time %></td>
+        <!--<td><%= message.update_time %></td>-->
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Edit', edit_message_path(message) %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>
