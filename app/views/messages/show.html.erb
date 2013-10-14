@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<!--
-<p>
-  <strong>Message:</strong>
-  <%= @message.message_id %>
-</p>
--->
-
 <p>
   <strong>Title:</strong>
   <%= @message.title %>
@@ -20,18 +13,6 @@
 <p>
   <strong>Image_Url</strong>
   <%= @message.image_url %>
-</p>
-
-<!--
-<p>
-  <strong>Create time:</strong>
-  <%= @message.create_time %>
-</p>
--->
-
-<p>
-  <strong>Update time:</strong>
-  <%= @message.update_time %>
 </p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |

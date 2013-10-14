@@ -5,45 +5,36 @@ one:
   title: MyString
   message: MyText
   image_url: ruby.gif
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00
+  user_id: xxxxx
 
 two:
   message_id: MyString
   title: MyString
   message: MyText
   image_url: rails.jpg
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00
+  user_id: yyyy
 
 title_max_check1:
   message_id: MyString
   title: 012345678901234567890123456789aa
   message: MyText
   image_url: rails.jpg
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00
+  user_id: zzzz
 
 title_max_check2:
   message_id: MyString
   title: 012345678901234567890123456789
   message: MyText
   image_url: rails.jpg
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00
   
 title_max_check3:
   message_id: MyString
   title: ０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
   message: MyText
   image_url: rails.jpg
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00
   
 title_max_check4:
   message_id: MyString
   title: ０１２３４５６７８９0123456789０１２３４５６７８９a
   message: MyText
   image_url: rails.jpg
-  create_time: 2013-10-13 17:36:00
-  update_time: 2013-10-13 17:36:00

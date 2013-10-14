@@ -14,12 +14,11 @@
 ActiveRecord::Schema.define(version: 20131013083600) do
 
   create_table "messages", force: true do |t|
+    t.string   "user_id"
     t.string   "message_id"
     t.string   "title"
     t.text     "message"
     t.string   "image_url"
-    t.datetime "create_time"
-    t.datetime "update_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
