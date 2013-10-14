@@ -3,6 +3,7 @@ require 'test_helper'
 class MessagesControllerTest < ActionController::TestCase
   setup do
     @message = messages(:one)
+    @message2 = messages(:two)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class MessagesControllerTest < ActionController::TestCase
 
   test "should create message" do
     assert_difference('Message.count') do
-      post :create, message: { create_time: @message.create_time, message: @message.message, message_id: @message.message_id, title: @message.title, update_time: @message.update_time }
+      post :create, message: { create_time: @message.create_time, message: @message.message, message_id: @message.message_id, title: @message.title, update_time: @message.update_time, image_url: @message.image_url }
     end
 
     assert_redirected_to message_path(assigns(:message))
@@ -35,7 +36,7 @@ class MessagesControllerTest < ActionController::TestCase
   end
 
   test "should update message" do
-    patch :update, id: @message, message: { create_time: @message.create_time, message: @message.message, message_id: @message.message_id, title: @message.title, update_time: @message.update_time }
+    patch :update, id: @message, message: { create_time: @message.create_time, message: @message.message, message_id: @message.message_id, title: @message.title, update_time: @message.update_time, image_url: @message.image_url }
     assert_redirected_to message_path(assigns(:message))
   end
 
