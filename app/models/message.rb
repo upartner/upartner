@@ -1,3 +1,3 @@
 class Message < ActiveRecord::Base
-  varidates :title, :message, resence:true
+  validates :title, :message, presence:true
 end
