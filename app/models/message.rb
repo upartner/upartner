@@ -5,4 +5,5 @@ class Message < ActiveRecord::Base
     with:%r{\.(gif|jpg|png|JPEG)\Z}i,
     message: 'はGIF、JPG、PNG画像のURLでなければなりません'
   }
+  validates :title, length:{maximum: 30}
 end
