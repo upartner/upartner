@@ -1,5 +1,6 @@
 #encoding: utf-8
 class Message < ActiveRecord::Base
+  #validation
   ##必須チェック
   validates :title, :message, presence:true
   ##最大文字数チェック

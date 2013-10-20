@@ -11,14 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013083600) do
+ActiveRecord::Schema.define(version: 20131020032328) do
+
+  create_table "friends", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
-    t.string   "user_id"
-    t.string   "message_id"
+    t.integer  "user_id"
     t.string   "title"
     t.text     "message"
     t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,40 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  message_id: MyString
+  user_id: 1
   title: MyString
   message: MyText
   image_url: ruby.gif
-  user_id: xxxxx
 
 two:
-  message_id: MyString
+  user_id: 2
   title: MyString
   message: MyText
   image_url: rails.jpg
-  user_id: yyyy
 
 title_max_check1:
-  message_id: MyString
+  user_id: 3
   title: 012345678901234567890123456789aa
   message: MyText
   image_url: rails.jpg
-  user_id: zzzz
 
 title_max_check2:
-  message_id: MyString
+  user_id: 4
   title: 012345678901234567890123456789
   message: MyText
   image_url: rails.jpg
   
 title_max_check3:
-  message_id: MyString
+  user_id: 3
   title: ０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
   message: MyText
   image_url: rails.jpg
   
 title_max_check4:
-  message_id: MyString
+  user_id: 3
   title: ０１２３４５６７８９0123456789０１２３４５６７８９a
   message: MyText
   image_url: rails.jpg

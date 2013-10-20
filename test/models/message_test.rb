@@ -13,7 +13,7 @@ class MessageTest < ActiveSupport::TestCase
   
   #image_urlテスト用messageクラス定義  
   def new_message(image_url)
-    Message.new(title:      "tile",
+    Message.new(title:      "title",
                 message:    "message",
                 image_url:  image_url)
   end

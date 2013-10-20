@@ -38,7 +38,6 @@ class MessagesControllerTest < ActionController::TestCase
     assert_difference('Message.count') do
       post :create, message: {user_id: @message.user_id,
                               title: @message.title, 
-                              message_id: @message.message_id, 
                               message: @message.message, 
                               image_url: @message.image_url }
     end
@@ -47,9 +46,8 @@ class MessagesControllerTest < ActionController::TestCase
 
   #updateが正常に実行できること
   test "should update message" do
-    patch :update, id: @message, message: { user_id: @message.user_id,
+    patch :update, id: @message2, message: { user_id: @message.user_id,
                                             title: @message.title,
-                                            message_id: @message.message_id,
                                             message: @message.message, 
                                             image_url: @message.image_url }
     assert_redirected_to message_path(assigns(:message))

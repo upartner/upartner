@@ -1,6 +1,7 @@
 <h1>Listing messages</h1>
 
 <table>
+  <!--
   <thead>
     <tr>
       <th>Title</th>
@@ -11,13 +12,19 @@
       <th></th>
     </tr>
   </thead>
-
+ -->
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.title %></td>
-        <td><%= message.message %></td>
+        <td><%= message.title %><th>user_name</th></td>
+      </tr>
+      <tr>
         <td><%= image_tag(message.image_url, class: 'list_image') %>
+      </tr>
+      <tr>
+        <td><%= message.message %></td>
+      </tr>
+      <tr>
         <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
