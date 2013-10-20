@@ -1,20 +1,8 @@
 <h1>Listing messages</h1>
 
-<table>
-  <!--
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Message</th>
-      <th>Image_Url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
- -->
-  <tbody>
-    <% @messages.each do |message| %>
+ <% @messages.each do |message| %>
+  <table>
+    <tbody>
       <tr>
         <td><%= message.title %><th>user_name</th></td>
       </tr>
@@ -29,10 +17,9 @@
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+    </tbody>
+  </table>
+      <hr>
+<% end %>
 
 <%= link_to 'New Message', new_message_path %>

@@ -4,7 +4,11 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    #ログインユーザがfriend登録しているユーザのメッセージを全て取得する
+    #TODO:ログインしたユーザで検索するように修正する
+    @messages = Message.select('m.*').where("f.user_id = ?",1).
+      joins("as m inner join friends as f on m.user_id = f.friend_id").
+      order("m.updated_at")
   end
 
   # GET /messages/1
@@ -69,6 +73,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:user_id, :message_id, :title, :message, :image_url)
+      params.require(:message).permit(:title, :message, :image_url)
     end
 end
