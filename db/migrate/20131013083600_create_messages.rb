@@ -1,7 +1,7 @@
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
-      t.int      "user_id"
+      t.integer  "user_id"
       t.string   "title"
       t.text     "message"
       t.string   "image_url"
