@@ -24,11 +24,13 @@
   </div>
   <div class="field">
     <%= f.label :'パスワード (半角英数字・20文字以内)' %><br>
-    <%= f.password_field :password, maxlength:20 %>
+<!--    <%= f.password_field :password, maxlength:20 %> -->
+    <%= f.text_field :password, maxlength:20 %>
+
   </div>
   <div class="field">
     <%= f.label :'パスワード確認' %><br>
-    <%= f.password_field maxlength:20 %>
+    <%= f.text_field :password, maxlength:20 %>
   </div>
   <div class="actions">
     <%= f.submit %>

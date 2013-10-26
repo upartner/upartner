@@ -1,4 +1,5 @@
 Upartner::Application.routes.draw do
+  get "portal/index"
   resources :users
 
   resources :messages
@@ -7,7 +8,7 @@ Upartner::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'portal#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

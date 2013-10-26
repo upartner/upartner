@@ -29,12 +29,14 @@ Message.create(user_id: 1,
 User.create(id: 1,
             email: 'upartner.01@gmail.com',
             name: 'name01',
-            password: '12345678')
+            password: '12345678',
+            user_id: 'dym')
 
 User.create(id: 2,
             email: 'upartner.02@gmail.com',
             name: 'name02',
-            password: '12345678')
+            password: '12345678',
+            user_id: 'abstract')
             
 Friend.create(user_id: 1,
               friend_id: 1)
