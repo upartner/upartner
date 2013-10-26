@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 
      validates :user_id,   :presence => true, format:VALID_REGEX
      validates :name,  :presence => true
-     validates :email, presence: true, :confirmation => true, format:VALID_MAIL_REGEX
-     validates :password,  :presence => true, :confirmation => true, format:VALID_REGEX
+     validates :email, :presence => true, :confirmation => true, :format => VALID_MAIL_REGEX
+     validates :password,  :presence => true, :confirmation => true, :format => VALID_REGEX
 end
