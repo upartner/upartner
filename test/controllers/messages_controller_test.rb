@@ -43,6 +43,15 @@ class MessagesControllerTest < ActionController::TestCase
     end
     assert_redirected_to message_path(assigns(:message))
   end
+  
+    #createのpostメソッドが正常にエラーが発生すること
+  test "create error" do
+      post :create, message: {user_id: @message.user_id,
+                              title: @message.title, 
+                              message: @message.message, 
+                              image_url: @message.image_url }
+    assert_redirected_to message_path(assigns(:message))
+  end
 
   #updateが正常に実行できること
   test "should update message" do

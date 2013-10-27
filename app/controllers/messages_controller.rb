@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
     @messages = Message.select('m.*').where("f.user_id = ?",1).
       joins("as m inner join friends as f on m.user_id = f.friend_id").
       order("m.updated_at")
+    @message = Message.new
   end
 
   # GET /messages/1
