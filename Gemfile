@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#修正後"bundle"コマンド実行
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -43,3 +44,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# sinmplecov カバレッジ
+group :test do
+  gem "simplecov", require: false
+end

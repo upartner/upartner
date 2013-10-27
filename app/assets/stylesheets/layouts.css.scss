@@ -1,0 +1,31 @@
+#header {
+  padding: 10px;
+  border-bottom: 1px solid;
+  font: small-caps 40px/40px "Times Nex Roman", serif;
+  text-shadow: 1px -1px 0 rgba(0,0,0,1);
+  text-align: left;
+  background: #333;
+  color: #ffffff;
+  #contents {
+  font: small-caps 20px/20px "Times Nex Roman", serif;
+  text-shadow: 1px -1px 0 rgba(0,0,0,1);
+  text-align: right;    
+  }
+}
+
+#columns {
+background: #EEE;
+  #side{
+    float: left;
+    padding:1em 2em;
+    width: 13em;
+  }
+
+  #main {
+    border-left: 1px solid;
+    border-color: #333;
+    margin-left: 15em;
+    padding: 1em;
+    text-shadow: -1px 1px 0 rgba(255,255,255,1);
+  }
+}

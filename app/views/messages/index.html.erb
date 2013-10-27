@@ -1,4 +1,5 @@
-<h1>Listing messages</h1>
+
+<%= render 'form' %>
 
  <% @messages.each do |message| %>
   <table>
@@ -13,9 +14,9 @@
         <td><%= message.message %></td>
       </tr>
       <tr>
-        <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', message %></td>
+        <td><%= link_to '修正', edit_message_path(message) %></td>
+        <td><%= link_to '削除', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     </tbody>
   </table>

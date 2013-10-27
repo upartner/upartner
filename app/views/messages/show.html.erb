@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @message.title %>
-</p>
 
-<p>
-  <strong>Message:</strong>
-  <%= @message.message %>
-</p>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= @message.title %><th>user_name</th></td>
+      </tr>
+      <tr>
+        <td><%= image_tag(@message.image_url, class: 'list_image') %>
+      </tr>
+      <tr>
+        <td><%= @message.message %></td>
+      </tr>
+    </tbody>
+  </table>
+      <hr>
 
-<p>
-  <strong>Image_Url</strong>
-  <%= @message.image_url %>
-</p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
