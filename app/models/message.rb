@@ -1,5 +1,6 @@
 #encoding: utf-8
 class Message < ActiveRecord::Base
+  belongs_to :user
   #validation
   ##必須チェック
   validates :title, :message, presence:true
