@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Upartner</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body class="<%= controller.controller_name %>">
-  <div id="header">
-  	Upartner
-  	<div id="contents">
-      ログインユーザ名
-    </div>
+  <%= render 'layouts/header' %>
+  <div id="container">
+    <%= yield %>
   </div>
-  
-  <div id="columns">
-  	
-  	<div id="side">
-      <ul>
-      	<li><%= link_to "ホーム",:controller=> "messages", :action=> "index"%></li>
-      	<li><%= link_to "友達",:controller=> "users", :action=> "index"%></li>
-      </ul>
-    </div>
-    <div id="main">
-      <%= yield %>
-    </div>
-  
-  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
