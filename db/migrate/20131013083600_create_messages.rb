@@ -9,5 +9,6 @@ class CreateMessages < ActiveRecord::Migration
       t.datetime "updated_at"
       t.timestamps
     end
+    add_index :messages,[:user_id,:created_at]
   end
 end

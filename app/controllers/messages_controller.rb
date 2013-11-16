@@ -1,14 +1,28 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_session
+  before_action :set_title
+  
+  
+  def set_title
+     
+  end
+  
+  #後で消す
+  def set_session
+    session[:user_id] = "1";
+  end
 
   # GET /messages
   # GET /messages.json
   def index
+    
     #ログインユーザがfriend登録しているユーザのメッセージを全て取得する
     #TODO:ログインしたユーザで検索するように修正する
-    @messages = Message.select('m.*').where("f.user_id = ?",1).
-      joins("as m inner join friends as f on m.user_id = f.friend_id").
-      order("m.updated_at")
+#    @messages = Message.select('m.*').where("f.user_id = ?",session[:user_id]).
+#      joins("as m inner join friends as f on m.user_id = f.friend_id")
+    @users = User.find(session[:user_id])
+    @messages = @users.message #.paginate(page: params[:page])
     @message = Message.new
   end
 
