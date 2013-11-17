@@ -3,7 +3,7 @@ class Message < ActiveRecord::Base
   belongs_to :user
   default_scope -> { order('updated_at DESC')}
   ##必須チェック
-  validates :title, :message,:user_id, presence:true
+  validates :title, :message, presence:true
   ##最大文字数チェック
   validates :title, length:{maximum: 30}
   validates :message, length:{maximum: 1000}

@@ -1,16 +1,10 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :set_session
   before_action :set_title
   
   
   def set_title
      
-  end
-  
-  #後で消す
-  def set_session
-    session[:user_id] = "1";
   end
 
   # GET /messages
@@ -44,6 +38,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message.user_id = session[:user_id]
 
     respond_to do |format|
       if @message.save

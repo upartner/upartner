@@ -6,6 +6,7 @@
 	      <ul class="nav pull-right">
 	      	<li><%= link_to "ホーム",:controller=> "messages", :action=> "index"%></li>
 	      	<li><%= link_to "友達",:controller=> "users", :action=> "index"%></li>
+	        <li><%= button_to "logout", portal_logout_path, class: "btn"%></li>
 	      </ul>
 	    </nav>
 	  </div>
