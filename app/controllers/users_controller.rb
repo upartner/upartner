@@ -30,6 +30,7 @@ class UsersController < ApplicationController
       if @user.save
 #        session[:login] = @user
         session[:user_id] = @user.id
+        UserEntry.semiRegistered(@user).deliver
         format.html { redirect_to messages_url, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else

@@ -1,15 +1,17 @@
+#encoding: utf-8
 class UserEntry < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "upartner0000@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.user_entry.semiRegistered.subject
   #
-  def semiRegistered
+  def semiRegistered(user)
+    @user = user    
     @greeting = "Hi"
-
-    mail to: "to@example.org"
+    
+    mail to: "heavymetalshout777@gmail.com", subject: 'upartner会員仮登録完了'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -20,6 +22,6 @@ class UserEntry < ActionMailer::Base
   def Registered
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: "heavymetalshout777@gmail.com"
   end
 end
