@@ -11,7 +11,7 @@ class UserEntry < ActionMailer::Base
     @user = user    
     @greeting = "Hi"
     
-    mail to: "heavymetalshout777@gmail.com", subject: 'upartner会員仮登録完了'
+    mail to: @user.email, subject: 'upartner会員仮登録完了'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,9 +19,10 @@ class UserEntry < ActionMailer::Base
   #
   #   en.user_entry.Registered.subject
   #
-  def Registered
+  def Registered(user)
+    @user = user    
     @greeting = "Hi"
-
-    mail to: "heavymetalshout777@gmail.com"
+    
+    mail to: @user.email, subject: 'upartner会員登録完了'
   end
 end
