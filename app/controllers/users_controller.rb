@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 #        session[:login] = @user
         session[:user_id] = @user.id
         UserEntry.semiRegistered(@user).deliver
-        format.html { redirect_to messages_url, notice: 'User was successfully created.' }
+        format.html { redirect_to users_entry_mail_send_path, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -62,6 +62,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def entry_mail_send
+    
   end
 
   private
