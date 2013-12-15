@@ -30,6 +30,25 @@ background: #EEE;
   }
 }
 
+header form.new_user {
+  float: right;
+}
+
+div.user_id {
+  float: left;
+}
+
+div.password {
+  float: left;
+  margin-left: 30px;
+}
+
+div.login_btn {
+  float: left;
+  margin-left: 30px;
+  margin-top: 28px;
+}
+
 .centering {
    text-align: center;
 }

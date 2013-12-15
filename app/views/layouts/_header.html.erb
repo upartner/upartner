@@ -3,14 +3,13 @@
       <div class="container">
       	<%= link_to "Upartner", '#', id: "logo" %>
       	<nav>
-	      <ul class="nav pull-right">
-	      	<li><%= link_to "ホーム",:controller=> "messages", :action=> "index"%></li>
-	      	<li><%= link_to "友達",:controller=> "users", :action=> "index"%></li>
-	      	<% if session[:user_id] %>
-	        <li><%= button_to "logout", portal_logout_path, class: "btn"%></li>
+      		<% if session[:user_id] %>
+	      	<%= link_to "ホーム",:controller=> "messages", :action=> "index"%>
+	      	<%= link_to "友達",:controller=> "users", :action=> "index"%>
+	        <%= button_to "logout", portal_logout_path, class: "btn"%>
 	        <% else %>
+	        <%= render 'portal/form' %>
 			<% end %>
-	      </ul>
 	    </nav>
 	  </div>
 	</div>

@@ -1,4 +1,4 @@
-<h1>Welcome uPartner</h1>
+<h1>Welcome UPARTNER</h1>
 
 <% if notice %>
 <p id="notice"><%= notice %></p>
@@ -6,5 +6,6 @@
 
 <%= render 'form' %>
 
-<p>初めての方は、以下より、新規会員登録をしてください</p>
+<div id="user_new">初めての方は、以下より、新規会員登録をしてください</div>
 <%= button_to '新規会員登録', new_user_path, :method => :get %>
+

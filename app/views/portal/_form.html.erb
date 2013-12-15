@@ -1,14 +1,14 @@
 #encoding: utf-8
 <%= form_for(@user,:url => {action:'login'}) do |f| %>
-  <div class="field">
-    <%= f.label :user_id %><br>
+  <div class="field user_id">
+    <%= f.label :user_id %>
     <%= f.text_field :user_id %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
+  <div class="field password">
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div class="actions">
+  <div class="actions login_btn">
     <%= f.submit 'ログイン' %>
   </div>
 <% end %>
