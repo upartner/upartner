@@ -5,7 +5,7 @@ Upartner::Application.routes.draw do
   get "users/entry_mail_send"
   get "users/auth"
   resources :users
-
+  resources :portal
   resources :messages
 
 

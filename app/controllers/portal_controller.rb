@@ -1,3 +1,4 @@
+#encoding: utf-8
 class PortalController < ApplicationController
   before_action :user_params, only: [:login]
 
@@ -19,7 +20,7 @@ class PortalController < ApplicationController
       session[:user_id] = user.id
       redirect_to messages_url
     else
-      redirect_to portal_index_path
+      redirect_to portal_index_path, notice: 'ユーザー名またはパスワードが間違っています'
     end    
   end
 
