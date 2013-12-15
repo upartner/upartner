@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 
 gem 'bootstrap-sass','2.3.2.0'
 
+
 #develop
 group :development do
 # Use sqlite3 as the database for Active Record
@@ -61,3 +62,6 @@ end
 group :test do
   gem "simplecov", require: false
 end
+
+
+gem 'will_paginate'
