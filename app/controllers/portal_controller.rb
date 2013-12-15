@@ -12,8 +12,9 @@ class PortalController < ApplicationController
   def login
     ##ユーザ確認
     user = User.find_by_user_id(params[:user][:user_id])
+    logger.debug(user.inspect)
     ##パスワード確認
-    if user and user.password == params[:user][:password]
+    if user and user.password == params[:user][:password] and user.activation
       ## セッションの取得（ユーザ）
       session[:user_id] = user.id
       redirect_to messages_url

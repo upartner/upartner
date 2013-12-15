@@ -1,3 +1,4 @@
+#encoding: utf-8
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.activation = false
 
     respond_to do |format|
       if @user.save
@@ -66,6 +68,20 @@ class UsersController < ApplicationController
 
   def entry_mail_send
     
+  end
+  
+  def auth
+    @user = User.find_by_user_id(params[:user_id])
+    
+    if @user
+      @user.update(activation: true)
+      session[:user_id] = @user.id
+   else
+      respond_to do |format|
+      format.html { redirect_to portal_index_path, notice: 'ユーザーが存在しません'}
+      format.json { head :no_content }
+      end
+   end
   end
 
   private
