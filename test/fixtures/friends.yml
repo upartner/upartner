@@ -1,9 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  user_id: MyString
-  friend_id: MyString
+user01_follow_user02:
+  user_id: 1
+  friend_id: 2
 
-two:
-  user_id: MyString
-  friend_id: MyString
+user01_follow_user03:
+  user_id: 1
+  friend_id: 3
+
+user01_follow_user04:
+  user_id: 1
+  friend_id: 4
+
+user01_follow_user05:
+  user_id: 1
+  friend_id: 5
+

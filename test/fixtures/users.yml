@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_id: MyString
-  name: MyString
-  password: MyString
-  email: MyString@test.jp
+  id: 1
+  user_id: user01
+  name: user01
+  password: 12345
+  email: user01@test.jp
+  activation: true
 
 two:
-  user_id: MyString
-  name: MyString
-  password: MyString
-  email: MyString@test.jp
+  id: 2
+  user_id: user02
+  name: user02
+  password: 12345
+  email: user02@test.jp
+  activation: false

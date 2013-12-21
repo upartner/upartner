@@ -2,8 +2,20 @@
 
 one:
   user_id: 1
-  title: MyString
-  message: MyText
+  title: MyString1
+  message: MyText1
+  image_url: ruby.gif
+
+one_1:
+  user_id: 1
+  title: MyString1
+  message: MyText1
+  image_url: ruby.gif
+
+one_2:
+  user_id: 1
+  title: MyString1
+  message: MyText1
   image_url: ruby.gif
 
 two:
