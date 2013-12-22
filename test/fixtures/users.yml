@@ -15,3 +15,30 @@ two:
   password: 12345
   email: user02@test.jp
   activation: false
+  
+user03:
+  id: 3
+  user_id: user03
+  name: user03
+  password: 12345
+  email: user03@test.jp
+  activation: false
+
+
+user04:
+  id: 4
+  user_id: user04
+  name: user04
+  password: 12345
+  email: user04@test.jp
+  activation: false
+
+
+user05:
+  id: 5
+  user_id: user05
+  name: user05
+  password: 12345
+  email: user05@test.jp
+  activation: false
+

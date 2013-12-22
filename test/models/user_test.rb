@@ -6,7 +6,9 @@ class UserTest < ActiveSupport::TestCase
   # end
   
   def setup   
-    
+    #fixtures :users
+    #fixtures :friends
+    #fixtures :messages
   end
   
   def test_find_by_user_id
@@ -20,12 +22,21 @@ class UserTest < ActiveSupport::TestCase
     assert_equal @messages.count , 3
   end
 
+  def test_friend_users
+    @users = User.find_by_user_id("user01")
+    @friends = @users.followed_users
+    assert_equal @friends.count , 4
+    
+    #assert_equal users(user01_follow_user02),@freinds
+  end
+    
   def test_user_hasmany_friend
     @users = User.find_by_user_id("user01")
-    @friends = @users.friend
-    assert_equal @friends.count , 4
+    @friends = @users.follower
+    assert_equal @friends.count , 0
   end    
 
+  
 end
 
   
