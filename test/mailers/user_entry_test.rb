@@ -1,19 +1,22 @@
+#encoding: utf-8
 require 'test_helper'
 
 class UserEntryTest < ActionMailer::TestCase
   test "semiRegistered" do
-    mail = UserEntry.semiRegistered
-    assert_equal "Semiregistered", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
+    user = User.find(1)
+    mail = UserEntry.semiRegistered(user)
+    assert_equal "upartner会員仮登録完了", mail.subject
+    assert_equal ["user01@test.jp"], mail.to
+    assert_equal ["upartner0000@gmail.com"], mail.from
     assert_match "Hi", mail.body.encoded
   end
 
   test "Registered" do
-    mail = UserEntry.Registered
-    assert_equal "Registered", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
+    user = User.find(1)
+    mail = UserEntry.Registered(user)
+    assert_equal "upartner会員登録完了", mail.subject
+    assert_equal ["user01@test.jp"], mail.to
+    assert_equal ["upartner0000@gmail.com"], mail.from
     assert_match "Hi", mail.body.encoded
   end
 

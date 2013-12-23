@@ -33,7 +33,7 @@ class UserTest < ActiveSupport::TestCase
   def test_user_hasmany_friend
     @users = User.find_by_user_id("user01")
     @friends = @users.follower
-    assert_equal @friends.count , 0
+    assert_equal @friends.count , 1
   end    
 
   

@@ -16,3 +16,6 @@ user01_follow_user05:
   user_id: 1
   friend_id: 5
 
+user03_follow_user01:
+  user_id: 3
+  friend_id: 1
