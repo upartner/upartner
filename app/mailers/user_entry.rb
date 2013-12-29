@@ -7,10 +7,12 @@ class UserEntry < ActionMailer::Base
   #
   #   en.user_entry.semiRegistered.subject
   #
-  def semiRegistered(user)
+  def semiRegistered(user, secret)
     @user = user    
     @greeting = "Hi"
-    
+    ref = "user_id=" + @user.user_id + "&email=" + @user.email
+    encryptor = ::ActiveSupport::MessageEncryptor.new(secret, cipher: 'aes-256-cbc')
+    @encrypt_message = encryptor.encrypt_and_sign(ref)
     mail to: @user.email, subject: 'upartner会員仮登録完了'
   end
 

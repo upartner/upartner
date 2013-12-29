@@ -32,7 +32,9 @@ class UsersController < ApplicationController
       if @user.save
 #        session[:login] = @user
         session[:user_id] = @user.id
-        UserEntry.semiRegistered(@user).deliver
+        secret = SecureRandom::hex(50)
+        session[:secret] = secret
+        UserEntry.semiRegistered(@user, secret).deliver
         format.html { redirect_to users_entry_mail_send_path, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
@@ -71,14 +73,21 @@ class UsersController < ApplicationController
   end
   
   def auth
-    @user = User.find_by_user_id(params[:user_id])
+    # secret = SecureRandom::hex(50)
+    encryptor = ::ActiveSupport::MessageEncryptor.new(session[:secret], cipher: 'aes-256-cbc')
+    url = request.url.to_s
+    url_sp = url.split("?")
+    query = encryptor.decrypt_and_verify(url_sp[1])
+    user_id = query[/=(\w+)/, 0].delete("=")
+
+    @user = User.find_by_user_id(user_id)
     
     if @user
       @user.update(activation: true)
       session[:user_id] = @user.id
    else
       respond_to do |format|
-      format.html { redirect_to portal_index_path, notice: 'ユーザーが存在しません'}
+      format.html { redirect_to portal_index_path, notice: @url}
       format.json { head :no_content }
       end
    end
