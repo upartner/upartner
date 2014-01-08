@@ -1,0 +1,21 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User_id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @followed_users.each do |user| %>
+      <tr>
+      	<td><%= user.user_id %></td>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

@@ -35,7 +35,6 @@ class UserTest < ActiveSupport::TestCase
     @friends = @users.follower
     assert_equal @friends.count , 1
   end    
-
   
 end
 

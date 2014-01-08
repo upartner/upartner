@@ -9,7 +9,7 @@
       	<nav>
       		<% if session[:user_id] %>
 	      	<%= link_to "ホーム",:controller=> "messages", :action=> "index"%>
-	      	<%= link_to "友達",:controller=> "users", :action=> "index"%>
+	      	<%= link_to "友達", friends_list_path%>
 	        <%= button_to "logout", portal_logout_path, class: "btn"%>
 	        <% end %>
 	    </nav>

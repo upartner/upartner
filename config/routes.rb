@@ -4,6 +4,7 @@ Upartner::Application.routes.draw do
   post "portal/logout"
   get "users/entry_mail_send"
   get "users/auth"
+  get "friends/list"
   resources :users
   resources :portal
   resources :messages
