@@ -12,12 +12,12 @@ class PortalController < ApplicationController
   ##ログイン処理 
   def login
     ##ユーザ確認
-    user = User.find_by_user_id(params[:user][:user_id])
+    user = User.find_by_email(params[:user][:email])
     logger.debug(user.inspect)
     ##パスワード確認
     if user and user.password == params[:user][:password] and user.activation
       ## セッションの取得（ユーザ）
-      session[:user_id] = user.id
+      session[:id] = user.id
       redirect_to messages_url
     else
       redirect_to portal_index_path, notice: 'ユーザー名またはパスワードが間違っています'
@@ -26,7 +26,7 @@ class PortalController < ApplicationController
 
   ##ログアウト処理
   def logout
-    session[:user_id] = nil
+    session[:id] = nil
     redirect_to portal_index_path
     
   end
@@ -34,6 +34,6 @@ class PortalController < ApplicationController
   private
       # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_id, :password)
+      params.require(:user).permit(:email, :password)
     end
 end

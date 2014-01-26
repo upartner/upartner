@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222230000) do
+ActiveRecord::Schema.define(version: 20140126050901) do
 
   create_table "friends", force: true do |t|
     t.integer  "user_id"
@@ -41,11 +41,9 @@ ActiveRecord::Schema.define(version: 20131222230000) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_id"
     t.boolean  "activation", default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["user_id"], name: "index_users_on_user_id", unique: true
 
 end

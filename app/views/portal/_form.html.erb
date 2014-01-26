@@ -1,8 +1,8 @@
 #encoding: utf-8
 <%= form_for(@user,:url => portal_login_path) do |f| %>
   <div class="field user_id">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
   <div class="field password">
     <%= f.label :password %>

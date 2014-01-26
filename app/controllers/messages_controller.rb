@@ -15,7 +15,8 @@ class MessagesController < ApplicationController
     #TODO:ログインしたユーザで検索するように修正する
 #    @messages = Message.select('m.*').where("f.user_id = ?",session[:user_id]).
 #      joins("as m inner join friends as f on m.user_id = f.friend_id")
-    @users = User.find(session[:user_id])
+#   session[:user_id] => session[:id] に変更
+    @users = User.find(session[:id])
     @messages = @users.message.paginate(:page=> params[:page],per_page: 5)
     @message = Message.new
   end
@@ -38,7 +39,9 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    @message.user_id = session[:user_id]
+
+#   session[:user_id] => session[:id] に変更    
+    @message.user_id = session[:id]
 
     respond_to do |format|
       if @message.save

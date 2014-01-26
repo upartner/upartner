@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 #        session[:login] = @user
-        session[:user_id] = @user.id
+#       session[:user_id] = @user.id
         secret = SecureRandom::hex(50)
         session[:secret] = secret
         UserEntry.semiRegistered(@user, secret).deliver
@@ -80,11 +80,13 @@ class UsersController < ApplicationController
     query = encryptor.decrypt_and_verify(url_sp[1])
     user_id = query[/=(\w+)/, 0].delete("=")
 
-    @user = User.find_by_user_id(user_id)
+    @user = User.find(user_id)
     
     if @user
       @user.update(activation: true)
-      session[:user_id] = @user.id
+      session[:id] = @user.id
+      UserEntry.Registered(@user).deliver
+
    else
       respond_to do |format|
       format.html { redirect_to portal_index_path, notice: @url}
@@ -101,6 +103,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_id, :name, :password, :email, :email_confirmation, :password_confirmation)
+      params.require(:user).permit(:name, :password, :email, :email_confirmation, :password_confirmation)
     end
 end
