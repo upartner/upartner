@@ -1,13 +1,13 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
   	<div class="navbar-inner">
       <div class="container">
-      	<% if session[:user_id] %>
+      	<% if session[:id] %>
       		<%= link_to "Upartner",messages_path, id: "logo" %>
         <% else %>
         	<%= link_to "Upartner",portal_index_path, id: "logo" %>
         <% end %>
       	<nav>
-      		<% if session[:user_id] %>
+      		<% if session[:id] %>
 	      	<%= link_to "ホーム",:controller=> "messages", :action=> "index"%>
 	      	<%= link_to "友達",:controller=> "users", :action=> "index"%>
 	        <%= button_to "logout", portal_logout_path, class: "btn"%>

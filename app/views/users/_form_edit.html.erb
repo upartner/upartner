@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!-- <div class="field">
+    <%= f.label :'ユーザーID (半角英数字・20文字以内)' %><br>
+    <%= f.text_field :id %>
+  </div> -->
+  
+  <div class="field">
+    <%= f.label :'ユーザー名' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :'メールアドレス' %><br>
+    <%= f.text_field :email, size:40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'パスワード (半角英数字・20文字以内)' %><br>
+<!--    <%= f.password_field :password, maxlength:20 %> -->
+    <%= f.password_field :password, maxlength:20 %>
+
+  </div>
+  <div class="field">
+    <%= f.label :'パスワード確認' %><br>
+    <%= f.password_field :password_confirmation, maxlength:20 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

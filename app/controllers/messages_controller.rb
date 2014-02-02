@@ -16,8 +16,8 @@ class MessagesController < ApplicationController
 #    @messages = Message.select('m.*').where("f.user_id = ?",session[:user_id]).
 #      joins("as m inner join friends as f on m.user_id = f.friend_id")
 #   session[:user_id] => session[:id] に変更
-    @users = User.find(session[:id])
-    @messages = @users.message.paginate(:page=> params[:page],per_page: 5)
+    @user = User.find(session[:id])
+    @messages = @user.message.paginate(:page=> params[:page],per_page: 5)
     @message = Message.new
   end
 
